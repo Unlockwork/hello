@@ -2,7 +2,7 @@ pipelines:
   seondpipeline:
     group: HelloworldGroup
     materials:
-      HelloworldMaterial:
+      HelloMaterial:
         git: https://github.com/Unlockwork/hello.git
         branch: master
     stages:
