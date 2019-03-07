@@ -3,7 +3,7 @@ pipelines:
     group: HelloworldGroup
     materials:
       HelloworldMaterial:
-        git: https://github.com/Unlockwork/Helloworld.git
+        git: https://github.com/Unlockwork/hello.git
         branch: master
     stages:
      - publish:
