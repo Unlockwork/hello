@@ -1,0 +1,36 @@
+1. Create java project
+2. create pipeline, stage, job and task
+
+3. Inside task:
+-> Command: /bin/bash
+-> Arguments:
+    -c
+    ant run
+
+4. Inside GOCD UI: in Config.xml:
+
+<config-repos>
+    <config-repo pluginId="yaml.config.plugin" id="hello">
+      <git url="https://github.com/git_repository/hello.git" />
+    </config-repo>
+</config-repos>
+
+
+5. Inside pipelines.gocd.yaml:
+pipelines:
+  seondpipeline:
+    group: HelloworldGroup
+    materials:
+      HelloMaterial:
+        git: https://github.com/Unlockwork/hello.git
+        branch: master
+    stages:
+     - publish:
+          jobs:
+            run:
+              tasks:
+                - exec:
+                   command: bash
+                   arguments:
+                    - -c
+                    - ant run
