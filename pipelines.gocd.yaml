@@ -1,0 +1,17 @@
+pipelines:
+  seondpipeline:
+    group: HelloworldGroup
+    materials:
+      HelloworldMaterial:
+        git: https://github.com/Unlockwork/Helloworld.git
+        branch: master
+    stages:
+     - publish:
+          jobs:
+            run:
+              tasks:
+                - exec:
+                   command: bash
+                   arguments:
+                    - -c
+                    - ant run
